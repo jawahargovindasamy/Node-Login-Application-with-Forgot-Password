@@ -76,7 +76,7 @@ export const forgotPassword = async (req, res) => {
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
-    const resetLink = `http://localhost:5173/reset-password/${user._id}/${token}`;
+    const resetLink = `https://tourmaline-lily-0c97de.netlify.app/reset-password/${user._id}/${token}`;
 
     const subject = "Password Reset Request";
     const text = `
